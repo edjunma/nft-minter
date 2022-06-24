@@ -20,7 +20,12 @@ const NavBar = ({ accounts, setAccounts }) => {
       <div>Email</div>
 
       {/* Right Side - Sections and Connect */}
-      <div></div>
+      <div>About</div>
+      <div>Mint</div>
+      <div>Team</div>
+
+      {/* Connect */}
+      {isConnected}
     </div>
   )
 }
