@@ -8,8 +8,8 @@ function App() {
 
   return (
     <div className="App">
-     <NavBar accounts={accounts} setAccounts={setAccounts} />
-     <MainMint accounts={accounts} setAccounts={setAccounts} />
+      <NavBar accounts={accounts} setAccounts={setAccounts} />
+      <MainMint accounts={accounts} setAccounts={setAccounts} />
     </div>
   );
 }
