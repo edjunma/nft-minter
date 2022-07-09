@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ethers, BigNumber } from 'ethers';
+import { Box, Button, Flex, Input, Text } from '@chakra-ui/react';
 import roboPunksNFT from './RoboPunksNFT.json';
 
 const roboPunksNFTAddress = '0x6F7Cf89f8518E676921b6159b2F174d58F167880';
@@ -37,22 +38,24 @@ const MainMint = ({ accounts, setAccounts }) => {
   };
 
   return (
-    <div>
-      <h1>RoboPunks</h1>
-      <p>It's 2078. Can the RoboPunks NFT save humans from destructive rampant NFT speculation? Mint RoboPunks to find out.</p>
-      {isConnected ? (
-        <div>
+    <Flex justify="center" align="center" height="100vh" paddingBottom="150px">
+      <Box width="520px">
+        <h1>RoboPunks</h1>
+        <p>It's 2078. Can the RoboPunks NFT save humans from destructive rampant NFT speculation? Mint RoboPunks to find out.</p>
+        {isConnected ? (
           <div>
-            <button onClick={handleDecrement}>-</button>
-            <input type="number" value={mintAmount} />
-            <button onClick={handleIncrement}>+</button>
+            <div>
+              <button onClick={handleDecrement}>-</button>
+              <input type="number" value={mintAmount} />
+              <button onClick={handleIncrement}>+</button>
+            </div>
+            <button onClick={handleMint}>Mint Now</button>
           </div>
-          <button onClick={handleMint}>Mint Now</button>
-        </div>
-      ) : (
-        <p>You must be connected to Mint.</p>
-      )}
-    </div>
+        ) : (
+          <p>You must be connected to Mint.</p>
+        )}
+      </Box>
+    </Flex>
   )
 }
 
